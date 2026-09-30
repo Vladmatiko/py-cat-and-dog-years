@@ -26,10 +26,10 @@ class TestGetHumanAge:
                 24, 24, [2, 2], id="cat_and_dog_24_years"
             ),
             pytest.param(
-                27, 28, [2, 2], id="cat_and_dog_next_years_before_border"
+                27, 28, [2, 2], id="cat_and_dog_27_28_years"
             ),
             pytest.param(
-                28, 29, [3, 3], id="cat_and_dog_next_years_after_border"
+                28, 29, [3, 3], id="cat_and_dog_28_29_years"
             ),
             pytest.param(
                 100, 100, [21, 17], id="cat_dog_years_hundred_value"
@@ -44,14 +44,14 @@ class TestRaises:
     @pytest.mark.parametrize(
         "cat_age, dog_age, expected",
         [
-            (
-                [], "0", TypeError
+            pytest.param(
+                [], "0", TypeError, id="cat_list_dog_string"
             ),
-            (
-                45, -1 , ValueError
+            pytest.param(
+                45, -1 , ValueError,id="cat_num_dog_inverted"
             ),
-            (
-                -1, 33, ValueError
+            pytest.param(
+                -1, 33, ValueError,id="cat_inverted_dog_num"
             )
         ]
     )
