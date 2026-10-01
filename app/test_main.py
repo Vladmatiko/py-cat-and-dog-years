@@ -48,10 +48,10 @@ class TestRaises:
                 [], "0", TypeError, id="cat_list_dog_string"
             ),
             pytest.param(
-                45, -1 , ValueError,id="cat_num_dog_inverted"
+                45, -1 , ValueError, id="cat_num_dog_inverted"
             ),
             pytest.param(
-                -1, 33, ValueError,id="cat_inverted_dog_num"
+                -1, 33, ValueError, id="cat_inverted_dog_num"
             )
         ]
     )
